@@ -6,7 +6,7 @@ Tasarımı kodla buluşturan, modern web standartlarına (Semantic HTML5) ve kul
 
 ## 🌐 Canlı Önizleme
 Projenin yayındaki haline aşağıdaki bağlantıdan ulaşabilirsiniz:
-👉 **[https://muhammededev-portfoy.vercel.app/)** ---
+👉 **[https://muhammededev-portfolio.vercel.app/)** ---
 
 ## ✨ Özellikler (Features)
 * 🌍 **Çok Dilli Destek (i18n):** Türkçe, İngilizce ve Arapça (RTL desteği ile).
