@@ -4,9 +4,9 @@ Tasarımı kodla buluşturan, modern web standartlarına (Semantic HTML5) ve kul
 
 ---
 
-## 🌐 Canlı Önizleme (Live Demo)
+## 🌐 Canlı Önizleme
 Projenin yayındaki haline aşağıdaki bağlantıdan ulaşabilirsiniz:
-👉 **[MUHAMMEDEDEV CANLI SİTEYİ GÖR](BURAYA_VERCEL_LINKINI_YAPISTIR)** ---
+👉 **[https://muhammededev-portfoy.vercel.app/)** ---
 
 ## ✨ Özellikler (Features)
 * 🌍 **Çok Dilli Destek (i18n):** Türkçe, İngilizce ve Arapça (RTL desteği ile).
