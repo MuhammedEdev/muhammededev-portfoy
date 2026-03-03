@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap responsive çalışması için zorunlu viewport -->
+    <title>MuhammedEdev | Frontend Developer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 – grid, navbar, flex, spacing, dropdown, collapse gibi tüm temel sınıfları getirir -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top py-3 glass-header">
+        <!-- navbar-expand-lg → lg (992px+) ekranlarda menü yatay görünür, altında collapse olur -->
+        <!-- fixed-top → navbar'ı sayfanın tepesine sabitler -->
+        <!-- py-3 → üst-alt 1rem padding (Bootstrap spacing utility) -->
+
+        <section class="container d-flex align-items-center justify-content-between">
+            <!-- container → içeriği ortalar + genişliği sınırlar -->
+            <!-- d-flex → flexbox display aktif eder -->
+            <!-- align-items-center → dikey merkezleme -->
+            <!-- justify-content-between → çocukları iki uca yaslar -->
+
+            <a class="navbar-brand logo-bold" href="#">
+                <!-- navbar-brand → Bootstrap logo/başlık stili (margin, font otomatik ayarlanır) -->
+                <span class="text-blue">ME.</span>DEV
+            </a>
+
+            <section class="nav-actions-group d-flex align-items-center gap-2 order-lg-3">
+                <!-- d-flex → flexbox -->
+                <!-- align-items-center → dikey merkez -->
+                <!-- gap-2 → elemanlar arası 0.5rem boşluk (Bootstrap spacing) -->
+                <!-- order-lg-3 → lg+ ekranlarda bu grup en sağa kayar (flex order) -->
+
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammededev@gmail.com" target="_blank"
+                    class="btn-contact-nav d-none d-sm-block text-decoration-none" data-i18n="btn-contact">
+                    <!-- d-none → xs (<576px) ekranda gizli -->
+                    <!-- d-sm-block → sm (≥576px) ve üstünde görünür (responsive display utility) -->
+                    Bana Ulaş
+                </a>
+
+                <section class="dropdown">
+                    <button class="action-btn dropdown-toggle shadow-none" type="button" data-bs-toggle="dropdown">
+                        <!-- dropdown-toggle → butona caret ekler + dropdown açma davranışı verir -->
+                        <!-- data-bs-toggle="dropdown" → tıklayınca menü açılır (Bootstrap JS ile çalışır) -->
+                        <!-- shadow-none → Bootstrap shadow'unu kaldırır -->
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end custom-dropdown shadow-sm">
+                        <!-- dropdown-menu → dropdown içeriğinin kapsayıcısı -->
+                        <!-- dropdown-menu-end → menüyü sağa yaslar -->
+                        <!-- shadow-sm → küçük gölge efekti -->
+                        <li><a class="dropdown-item lang-switch" href="#" data-lang="tr">TR</a></li>
+                        <!-- dropdown-item → her satırın hover + padding stili -->
+                        <li><a class="dropdown-item lang-switch" href="#" data-lang="en">EN</a></li>
+                        <li><a class="dropdown-item lang-switch" href="#" data-lang="ar">AR</a></li>
+                    </ul>
+                </section>
+
+                <button id="theme-toggle" class="action-btn" aria-label="Tema Değiştir">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+
+                <button class="navbar-toggler border-0 p-0 ms-1 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav">
+                    <!-- navbar-toggler → hamburger butonu -->
+                    <!-- data-bs-toggle="collapse" → collapse mekanizmasını tetikler -->
+                    <!-- data-bs-target → hangi ID'yi aç/kapatacağını belirtir -->
+                    <section class="menu-icon-bars"><span></span><span></span></section>
+                </button>
+            </section>
+
+            <section class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <!-- collapse → mobil'de başlangıçta gizli -->
+                <!-- navbar-collapse → navbar'ın açılır/kapanır kısmı -->
+                <!-- justify-content-center → içeriği yatay ortala -->
+
+                <ul class="navbar-nav gap-lg-4 fw-bold text-center mt-3 mt-lg-0">
+                    <!-- navbar-nav → yatay menü listesi -->
+                    <!-- gap-lg-4 → lg+ ekranlarda 1.5rem boşluk -->
+                    <!-- mt-3 mt-lg-0 → mobilde üst boşluk, lg'de sıfırla (responsive margin) -->
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="#neler-yapiyorum" data-i18n="nav-about">
+                            <!-- nav-link → link stili (padding, hover, active vs. Bootstrap otomatik) -->
+                            Neler Yapıyorum?
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#projeler"
+                            data-i18n="nav-projects">Projelerim</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#kariyer"
+                            data-i18n="nav-career">Kariyer & Eğitim</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#yetenekler"
+                            data-i18n="nav-skills">Yetenekler</a></li>
+                </ul>
+            </section>
+        </section>
+    </nav>
+
+    <header class="hero-wrap text-center">
+        <section class="container">
+            <!-- container → içeriği ortalar + genişliği sınırlar -->
+
+            <small class="hero-badge" data-i18n="hero-badge">YAZILIM GELİŞTİRME // ÜNİVERSİTE 1</small>
+            <h1 class="display-2 fw-800 hero-title mt-3" data-i18n="hero-title">
+                <!-- display-2 → Bootstrap çok büyük başlık sınıfı -->
+                Tasarımı <span class="text-blue">Kodla</span> Buluşturuyorum.
+            </h1>
+            <p class="hero-p mx-auto" data-i18n="hero-desc">
+                <!-- mx-auto → yatayda otomatik ortalama (margin auto) -->
+                Liseden gelen 4 yıllık teknik temelimi ve tam dönem staj tecrübemi harmanlıyorum.
+            </p>
+
+            <aside class="hero-stats-container reveal d-flex align-items-center justify-content-center gap-3 gap-md-5">
+                <!-- d-flex → flexbox -->
+                <!-- align-items-center → dikey merkezleme -->
+                <!-- justify-content-center → yatay merkezleme -->
+                <!-- gap-3 gap-md-5 → xs'de 1rem, md+'da 2rem boşluk (responsive) -->
+
+                <figure class="stat-unit text-center m-0">
+                    <!-- m-0 → margin sıfırlama -->
+                    <span class="stat-val" data-i18n="stat-1-val">Sertifikalı</span>
+                    <figcaption class="stat-lbl" data-i18n="stat-1-lbl">Usta Geliştirici</figcaption>
+                </figure>
+                <span class="stat-sep"></span>
+                <figure class="stat-unit text-center m-0">
+                    <span class="stat-val">Pixel Perfect</span>
+                    <figcaption class="stat-lbl" data-i18n="stat-2-lbl">Arayüz Vizyonu</figcaption>
+                </figure>
+                <span class="stat-sep"></span>
+                <figure class="stat-unit text-center m-0">
+                    <span class="stat-val" data-i18n="stat-3-val">Aktif</span>
+                    <figcaption class="stat-lbl" data-i18n="stat-3-lbl">Öğrenme Süreci</figcaption>
+                </figure>
+            </aside>
+        </section>
+    </header>
+
+    <main>
+        <section id="neler-yapiyorum" class="py-5 container section-scroll">
+            <!-- py-5 → üst-alt 3rem padding -->
+            <!-- container → içerik genişliği sınırlama -->
+
+            <section class="row g-4 text-center">
+                <!-- row → Bootstrap grid satırı başlatır -->
+                <!-- g-4 → sütunlar arası 1.5rem boşluk -->
+
+                <article class="col-md-4 reveal">
+                    <!-- col-md-4 → md (≥768px) ve üstünde 3 eşit sütun (12/4=3) -->
+                    <section class="feature-card">
+                        <i class="fas fa-layer-group feature-icon-circle mx-auto"></i>
+                        <h3 data-i18n="feat-1-title">Modern Arayüz</h3>
+                        <p data-i18n="feat-1-desc">Tailwind ve Bootstrap kullanarak şık, hızlı ve kullanıcı odaklı
+                            tasarımlar geliştiriyorum.</p>
+                    </section>
+                </article>
+                <article class="col-md-4 reveal">
+                    <section class="feature-card">
+                        <i class="fas fa-code feature-icon-circle mx-auto"></i>
+                        <h3 data-i18n="feat-2-title">Teknik Analiz</h3>
+                        <p data-i18n="feat-2-desc">Bölümümün getirdiği analiz yeteneğiyle, karmaşık sorunlara temiz
+                            kodlu çözümler üretiyorum.</p>
+                    </section>
+                </article>
+                <article class="col-md-4 reveal">
+                    <section class="feature-card">
+                        <i class="fas fa-certificate feature-icon-circle mx-auto"></i>
+                        <h3 data-i18n="feat-3-title">Ustalık Belgeli</h3>
+                        <p data-i18n="feat-3-desc">Lise eğitimimden gelen resmi ustalık ve işyeri açma belgeleriyle
+                            teknik yetkinlik.</p>
+                    </section>
+                </article>
+            </section>
+        </section>
+
+        <!-- Projeler bölümü -->
+        <section id="projeler" class="py-5 container section-scroll">
+            <h2 class="text-center fw-800 display-5 mb-5 reveal" data-i18n="proj-main-title">
+                <!-- display-5 → Bootstrap orta büyük başlık -->
+                Seçkin <span class="text-blue">Projelerim</span>
+            </h2>
+            <section class="row g-4">
+                <article class="col-md-4 reveal">
+                    <!-- col-md-4 → 3 sütun grid -->
+                    <a href="https://muhammededev.github.io/taskmaster-logic/" target="_blank"
+                        class="text-decoration-none h-100 d-block">
+                        <!-- h-100 → tam yükseklik kaplasın -->
+                        <!-- d-block → blok element yap -->
+                        <section class="career-box project-card">
+                            <i class="fas fa-tasks career-icon"></i>
+                            <span class="career-date">JS Logic & Algoritma</span>
+                            <h3 class="card-title-theme">TaskMaster Logic</h3>
+                            <p class="card-text-theme" data-i18n="proj-1-desc">Karmaşık görev yönetimi süreçlerini
+                                optimize eden saf JavaScript tabanlı mantık projesi.</p>
+                            <span class="career-line"></span>
+                        </section>
+                    </a>
+                </article>
+                <article class="col-md-4 reveal">
+                    <a href="https://muhammededev.github.io/the-web-history/" target="_blank"
+                        class="text-decoration-none h-100 d-block">
+                        <section class="career-box project-card">
+                            <i class="fas fa-landmark career-icon"></i>
+                            <span class="career-date">Web Design & History</span>
+                            <h3 class="card-title-theme">The Web History</h3>
+                            <p class="card-text-theme" data-i18n="proj-2-desc">İnternetin tarihsel gelişimini modern bir
+                                arayüzle sunan, yüksek görsel hiyerarşiye sahip çalışma.</p>
+                            <span class="career-line"></span>
+                        </section>
+                    </a>
+                </article>
+                <article class="col-md-4 reveal">
+                    <a href="https://muhammededev.github.io/core-admin-dashboard/" target="_blank"
+                        class="text-decoration-none h-100 d-block">
+                        <section class="career-box project-card">
+                            <i class="fas fa-chart-pie career-icon"></i>
+                            <span class="career-date">Bootstrap & UI Kit</span>
+                            <h3 class="card-title-theme">Core Admin Dashboard</h3>
+                            <p class="card-text-theme" data-i18n="proj-3-desc">Veri odaklı yönetim panelleri için
+                                tasarlanmış, tam responsive arayüz bileşenleri.</p>
+                            <span class="career-line"></span>
+                        </section>
+                    </a>
+                </article>
+            </section>
+        </section>
+
+        <section id="kariyer" class="py-5 section-scroll">
+            <section class="container py-5">
+                <h2 class="text-center fw-800 display-5 mb-5 reveal" data-i18n="career-main-title">Kariyer & <span
+                        class="text-blue">Eğitim</span></h2>
+                <section class="row g-4 justify-content-center">
+                    <!-- justify-content-center → kartları yatay ortala -->
+                    <article class="col-md-5 reveal">
+                        <!-- col-md-5 → md+ ekranlarda yaklaşık %41 genişlik -->
+                        <section class="career-box">
+                            <i class="fas fa-school career-icon"></i>
+                            <span class="career-date">2021 - 2025</span>
+                            <h3 class="card-title-theme" data-i18n="edu-1-title">M. Rüştü Uzel MTAL</h3>
+                            <p class="card-text-theme" data-i18n="edu-1-desc">Bilişim Teknolojileri ve Yazılım eğitimi.
+                                12. sınıfta tam dönem staj ile saha tecrübesi.</p>
+                            <span class="career-line"></span>
+                        </section>
+                    </article>
+                    <article class="col-md-5 reveal">
+                        <section class="career-box">
+                            <i class="fas fa-university career-icon"></i>
+                            <span class="career-date">2025 - 2026</span>
+                            <h3 class="card-title-theme" data-i18n="edu-2-title">Yazılım Geliştirme</h3>
+                            <p class="card-text-theme" data-i18n="edu-2-desc">Yazılım Geliştirme ve Çözümleme bölümü.
+                                Frontend üzerine aktif akademik uzmanlaşma.</p>
+                            <span class="career-line"></span>
+                        </section>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <section id="yetenekler" class="py-5 overflow-hidden section-scroll">
+            <h2 class="text-center fw-800 mb-5">Tech <span class="text-blue">Stack</span></h2>
+            <section class="marquee-zone">
+                <section class="marquee-track">
+                    <ul class="marquee-items list-unstyled">
+                        <!-- list-unstyled → Bootstrap liste stilini kaldırır (nokta vs. yok) -->
+                        <li class="st-tag"><i class="fab fa-html5"></i> HTML5</li>
+                        <li class="st-tag"><i class="fab fa-css3-alt"></i> CSS3</li>
+                        <li class="st-tag"><i class="fab fa-js"></i> JavaScript</li>
+                        <li class="st-tag"><i class="fab fa-react"></i> React</li>
+                        <li class="st-tag"><i class="fab fa-node-js"></i> Node.js</li>
+                        <li class="st-tag"><i class="fab fa-git-alt"></i> Git</li>
+                        <li class="st-tag"><i class="fas fa-wind"></i> Tailwind</li>
+                        <li class="st-tag"><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                        <li class="st-tag"><i class="fas fa-database"></i> SQL</li>
+                    </ul>
+                    <ul class="marquee-items list-unstyled">
+                        <li class="st-tag"><i class="fab fa-html5"></i> HTML5</li>
+                        <li class="st-tag"><i class="fab fa-css3-alt"></i> CSS3</li>
+                        <li class="st-tag"><i class="fab fa-js"></i> JavaScript</li>
+                        <li class="st-tag"><i class="fab fa-react"></i> React</li>
+                        <li class="st-tag"><i class="fab fa-node-js"></i> Node.js</li>
+                        <li class="st-tag"><i class="fab fa-git-alt"></i> Git</li>
+                        <li class="st-tag"><i class="fas fa-wind"></i> Tailwind</li>
+                        <li class="st-tag"><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                        <li class="st-tag"><i class="fas fa-database"></i> SQL</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer-pro py-5 mt-5 border-top">
+        <!-- py-5 → üst-alt 3rem padding -->
+        <!-- mt-5 → üstten 3rem boşluk -->
+        <!-- border-top → üst çerçeve -->
+
+        <section class="container text-center">
+            <nav class="d-flex justify-content-center gap-3 mb-4" aria-label="Sosyal Bağlantılar">
+                <!-- d-flex → flexbox -->
+                <!-- justify-content-center → ortala -->
+                <!-- gap-3 → 1rem boşluk -->
+                <!-- mb-4 → alttan 1.5rem boşluk -->
+                <a href="https://github.com/MuhammedEdev" target="_blank" class="s-link"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/muhammed-141513379" target="_blank" class="s-link"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:muhammededev@gmail.com" class="s-link"><i class="fas fa-envelope"></i></a>
+            </nav>
+            <p class="small fw-bold mb-0">© 2026 MUHAMMEDEDEV | <span class="text-blue" data-i18n="footer-role">Usta
+                    Geliştirici</span></p>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS – navbar toggle, dropdown, collapse gibi interaktif özellikleri çalıştırır -->
+    <script src="script.js"></script>
+</body>
+
+</html>
